@@ -35,6 +35,16 @@
                             "name": "image-full-width",
                             "display": "Full"
                         }
+                    ],
+                    "image_without_caption": [
+                        {
+                            "name": "emphasized",
+                            "display": "Emphasized"
+                        },
+                        {
+                            "name": "image-full-width",
+                            "display": "Full"
+                        }
                     ]
                 },
                 "choices": {
@@ -94,6 +104,25 @@
                                     "single": "heading3",
                                     "label": "Caption",
                                     "placeholder": "Image Caption..."
+                                }
+                            }
+                        },
+                        "repeat": {}
+                    },
+                    "image_without_caption": {
+                        "type": "Slice",
+                        "fieldset": "Image without Caption",
+                        "description": "An image without caption",
+                        "icon": "image",
+                        "non-repeat": {
+                            "image": {
+                                "type": "Image",
+                                "config": {
+                                    "constraint": {
+                                        "width": 1000
+                                    },
+                                    "thumbnails": [],
+                                    "label": "Image"
                                 }
                             }
                         },

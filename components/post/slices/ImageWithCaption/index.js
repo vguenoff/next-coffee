@@ -1,24 +1,22 @@
-import React, { Fragment } from 'react'
-import DefaultImage from './DefaultImage'
-import FullWidthImage from './FullWidthImage'
-import { imageCaptionStyles } from 'styles'
+import React from 'react';
+import DefaultImage from './DefaultImage';
+import FullWidthImage from './FullWidthImage';
+import { imageCaptionStyles } from 'styles';
 
 /**
  * Image caption slice component
  */
-const ImageCaption = ({ slice }) => {
+const ImageCaption = ({ slice }) => (
+    <>
+        {slice.slice_label === 'image-full-width' ? (
+            <FullWidthImage slice={slice} />
+        ) : (
+            <DefaultImage slice={slice} />
+        )}
+        <style jsx global>
+            {imageCaptionStyles}
+        </style>
+    </>
+);
 
-  const imageComponent =
-    slice.slice_label === 'image-full-width' ? 
-    <FullWidthImage slice={slice} /> :
-    <DefaultImage slice={slice} />
-
-  return (
-    <Fragment>
-      {imageComponent}
-      <style jsx global>{imageCaptionStyles}</style>
-    </Fragment>
-  )
-}
-
-export default ImageCaption
+export default ImageCaption;
